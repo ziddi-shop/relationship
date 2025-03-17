@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enchanted Love Realm by Shobhit Dev</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Quicksand:wght@300;500;700&family=Marck+Script&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #2a0a3a, #1a0522);
+            font-family: 'Quicksand', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .magic-container {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px) saturate(180%);
+            border-radius: 30px;
+            padding: 60px 80px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 50px rgba(255, 105, 180, 0.3),
+                        inset 0 0 20px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: containerFloat 8s ease-in-out infinite;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes containerFloat {
+            0%, 100% { transform: translateY(0) rotate(0.5deg); }
+            50% { transform: translateY(-20px) rotate(-0.5deg); }
+        }
+
+        h1 {
+            font-family: 'Parisienne', cursive;
+            font-size: 5.5rem;
+            background: linear-gradient(45deg, #ff9de6, #ff6bda, #ff3d9a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px rgba(255, 61, 154, 0.4);
+            margin-bottom: 30px;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            0% { filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.5)); }
+            100% { filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.8)); }
+        }
+
+        .enchanted-text {
+            color: #ffd3f0;
+            font-size: 1.8rem;
+            margin: 30px 0;
+            text-shadow: 0 0 15px rgba(241, 5, 123, 0.5);
+            animation: textFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes textFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .magic-button {
+            font-family: 'Marck Script', cursive;
+            padding: 20px 50px;
+            font-size: 2rem;
+            background: linear-gradient(45deg, #ff3d9a 30%, #ff6bda 100%);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+            margin-top: 40px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .magic-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .magic-button:hover::before {
+            left: 100%;
+        }
+
+        .magic-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5);
+        }
+
+        .magic-particle {
+            position: absolute;
+            pointer-events: none;
+            animation: particleFloat linear forwards;
+            opacity: 0;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .starry-background {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            animation: starTwinkle 3s infinite;
+        }
+
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .starry-background span {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px white;
+        }
+
+        .love-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,105,180,0.3) 0%, transparent 70%);
+            filter: blur(80px);
+            pointer-events: none;
+            animation: glowPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.2); opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <div class="starry-background"></div>
+    <div class="love-glow"></div>
+    <div class="magic-container">
+        <h1>Hey my love, 💖</h1>
+        <p class="enchanted-text">I have a special surprise for you! ✨</p>
+        <a href="main.html" class="magic-button">Tap here to see it! 😘🎁🌸</a>
+    </div>
+
+    <script>
+        function createParticle() {
+            const particles = ['❀', '✧', '✦', '♡', '✿', '❁', '✼', '❋'];
+            const particle = document.createElement('div');
+            particle.classList.add('magic-particle');
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.fontSize = Math.random() * 20 + 15 + 'px';
+            particle.style.animationDuration = Math.random() * 3 + 4 + 's';
+            particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+            particle.style.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
+            document.body.appendChild(particle);
+
+            particle.addEventListener('animationend', () => particle.remove());
+        }
+
+        function createStars() {
+            const container = document.querySelector('.starry-background');
+            for (let i = 0; i < 200; i++) {
+                const star = document.createElement('span');
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 3 + 's';
+                container.appendChild(star);
+            }
+        }
+
+        document.querySelector('.magic-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            for (let i = 0; i < 20; i++) {
+                setTimeout(createParticle, i * 50);
+            }
+            setTimeout(() => {
+                window.location.href = 'main.html';
+            }, 1000);
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() < 0.3) createParticle(e);
+        });
+
+        createStars();
+        setInterval(createParticle, 300);
+    </script>
+</body>
+</html>

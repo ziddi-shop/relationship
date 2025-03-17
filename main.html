@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shobhit ❤️ Sona | Eternal Love</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Dancing+Script:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            background: linear-gradient(45deg, #ff007f, #ff69b4);
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+            font-family: 'Dancing Script', cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            animation: float 8s infinite linear;
+            pointer-events: none;
+            opacity: 0.7;
+            font-size: 2rem;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(720deg); }
+        }
+
+        /* Main Container */
+        .love-container {
+            position: relative;
+            z-index: 2;
+            width: 90%;
+            max-width: 800px;
+            perspective: 1000px;
+        }
+
+        /* Love Card */
+        .love-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            transform-style: preserve-3d;
+            box-shadow: 0 0 50px rgba(255, 20, 147, 0.3);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-image: linear-gradient(45deg, #ff1493, #ff4500, #ff69b4);
+            border-image-slice: 1;
+            max-height: 70vh;
+            overflow: hidden; /* Remove scrollbar */
+            animation: floatUpDown 3s infinite ease-in-out;
+        }
+
+        .love-card:hover {
+            transform: rotateY(5deg) rotateX(5deg) scale(1.02);
+            box-shadow: 0 0 80px rgba(255, 20, 147, 0.5);
+        }
+
+        @keyframes floatUpDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .couple-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem;
+            background: linear-gradient(45deg, #ff1493, #ff4500, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animated Heart Separator */
+        .heart-separator {
+            text-align: center;
+            margin: 30px 0;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Love Letter Content */
+        .love-letter {
+            font-size: 1.4rem;
+            line-height: 2;
+            color: #5a5a5a;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .love-letter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 182, 193, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .love-letter:hover::before {
+            left: 100%;
+        }
+
+        /* Signature Section */
+        .signature {
+            text-align: right;
+            margin-top: 40px;
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5rem;
+            color: #ff0066;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 2s;
+            position: relative;
+        }
+
+        .signature::after {
+            content: '💖';
+            position: absolute;
+            right: -40px;
+            top: -10px;
+            font-size: 2rem;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 25px rgba(255, 20, 147, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+
+        .music-player:hover {
+            transform: scale(1.1) rotate(180deg);
+            background: #ff69b4;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .couple-names { font-size: 3rem; }
+            .love-letter { font-size: 1.2rem; padding: 15px; }
+            .signature { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Elements -->
+    <div class="floating-element">💖</div>
+    <div class="floating-element">🎀</div>
+    <div class="floating-element">💌</div>
+    <div class="floating-element">🌸</div>
+    <div class="floating-element">💕</div>
+
+    <div class="love-container">
+        <div class="love-card">
+            <div class="header">
+                <h1 class="couple-names">Shobhit ❤️ Someone</h1>
+                <div class="heart-separator">💞</div>
+            </div>
+
+            <div class="love-letter" id="loveText">
+                <!-- Text will be injected by JavaScript -->
+            </div>
+
+            <div class="signature">
+                Forever Yours,<br>
+                Your Shobhit 💝
+            </div>
+        </div>
+    </div>
+
+    <!-- Music Control -->
+    <div class="music-player">🎶</div>
+
+    <script>
+        // Create floating elements
+        function createFloatingElements() {
+            const emojis = ['💖', '💘', '💝', '💟', '💌', '🎀', '🌸'];
+            const container = document.body;
+            
+            for(let i = 0; i < 20; i++) {
+                const element = document.createElement('div');
+                element.className = 'floating-element';
+                element.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                element.style.left = Math.random() * window.innerWidth + 'px';
+                element.style.animationDuration = Math.random() * 5 + 5 + 's';
+                element.style.fontSize = Math.random() * 25 + 20 + 'px';
+                container.appendChild(element);
+            }
+        }
+        createFloatingElements();
+
+        // Typewriter Effect with Emojis
+        const text = `My love,💖
+Your eyes make time stand still...💑
+Your smile erases all my sorrows...✨💞
+The fear of losing you scares me,😢
+But we are one, bound forever...💓
+You are my heartbeat, my soul...💗
+Stay with me always, my love...💟`;
+
+        let index = 0;
+        const loveText = document.getElementById('loveText');
+        
+        function typeWriter() {
+            if (index < text.length) {
+                loveText.innerHTML += text.charAt(index) === '\n' ? '<br>' : text.charAt(index);
+                index++;
+                setTimeout(typeWriter, Math.random() * 50 + 50);
+                
+                // Random emoji effects
+                if(Math.random() < 0.1) {
+                    const emoji = document.createElement('span');
+                    emoji.textContent = ['💖', '💘', '💝'][Math.floor(Math.random()*3)];
+                    emoji.style.position = 'absolute';
+                    emoji.style.left = Math.random() * window.innerWidth + 'px';
+                    emoji.style.top = Math.random() * window.innerHeight + 'px';
+                    emoji.style.animation = `pop ${Math.random() * 0.5 + 0.5}s ease`;
+                    document.body.appendChild(emoji);
+                    setTimeout(() => emoji.remove(), 1000);
+                }
+            }
+        }
+        typeWriter();
+
+        // Music Control
+        const audio = new Audio('teri-meri-kahani.mp3');
+        const musicBtn = document.querySelector('.music-player');
+        let isPlaying = false;
+        
+        musicBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            musicBtn.style.background = isPlaying ? '#ff69b4' : 'rgba(255, 255, 255, 0.9)';
+            musicBtn.style.transform = isPlaying ? 'rotate(360deg)' : 'rotate(0deg)';
+            isPlaying ? audio.play() : audio.pause();
+        });
+
+        // Add initial animation to card
+        gsap.from('.love-card', {
+            duration: 1.5,
+            scale: 0.5,
+            opacity: 0,
+            ease: "elastic.out(1, 0.3)"
+        });
+    </script>
+
+</body>
+</html>
